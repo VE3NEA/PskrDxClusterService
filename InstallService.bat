@@ -1,0 +1,3 @@
+@echo Installing service...
+sc.exe create "PSKReporter DX Cluster Server" binPath=%~dp0VE3NEA.PskrDxClusterService.exe
+pause

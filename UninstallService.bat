@@ -1,0 +1,3 @@
+@echo Uninstalling service...
+sc.exe delete "PSKReporter DX Cluster Server"
+pause
