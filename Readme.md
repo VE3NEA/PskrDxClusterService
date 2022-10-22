@@ -20,6 +20,12 @@ run silently while Windows is running.
 The server performs two tasks, it serves the clients with the spots and archives the spots
 in a local folder.  Both functions may be enabled or disabled in the settings file as described below.
 
+## Installation
+
+Download the `PskrDxClusterService.zip` file from the
+[latest release page](https://github.com/VE3NEA/PskrDxClusterService/releases/latest)
+and unzip it to some folder, e.g., `c:\PskrDxClusterService` . Avoid the `Program Files` directory.
+
 ## Settings
 
 The settings file, `Settings.json`, is created after the first run of the server and looks like this:
