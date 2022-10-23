@@ -12,7 +12,7 @@ and serves them in the classical DX cluster format understood by many
 loggers, cluster monitors and other Ham programs.
 
 You can either run the server as a console application by double-clicking on the exe file,
-or install as a
+or install it as a
 [Windows service](https://stackify.com/what-are-windows-services/). In the latter case, the
 server may be configured to start on system startup, even before the user logs in, and
 run silently while Windows is running.
@@ -51,6 +51,14 @@ The settings file, `Settings.json`, is created after the first run of the server
 
 Edit this file in a text editor to change the settings.
 
+- Set `ArchiveSpots` to `false` if you do not need to keep the archive of the old spots. When spot archiving is disabled, 
+the server connects to the MQTT soruce only when one or more clients are connected to its DX cluster.
+- `Mqtt` / `Host` is currently the only source of the spot feed, kindly provided by Tom M0LTE. More sources like this may
+be available in the future.
+- `Topis` define what spots will be received. See the topic format description on the
+[MQTT feed](http://samburns.uk/)
+web page. Be mindful when changing the filters, do not request more spots than you actually need.
+
 ## Connecting to the DX Cluster
 
 Use this address in your Ham software to connect to the DX cluster server:
@@ -69,8 +77,11 @@ Enter your callsign when prompted, and watch the spot feed. Type "`BYE`" to disc
 
 ## Installing the Windows Service
 
-To install the program as a Windows service, right-click on the `InstallService.bat` file that comes with the program, and click on `Run as Administrator` in the popup menu.
+To install the program as a Windows service, right-click on the `InstallService.bat` file that comes with the program, and 
+click on `Run as Administrator` in the popup menu.
 
 Use the `UninstallService.bat` file to uninstall the windows service.
 
-Once the service is installed, press `Ctrl-Esc` and type `Services` to open the Services window, select your service and click on the Start button. To enable auto-start of the service, double-click on it and select `Automatic (Delayed Start)` in the Startup Type box.
+Once the service is installed, press `Ctrl-Esc` and type `Services` to open the Services window, select your service and
+click on the Start button. To enable auto-start of the service, double-click on it and select `Automatic (Delayed Start)`
+in the Startup Type box.
